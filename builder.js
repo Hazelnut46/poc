@@ -1,6 +1,7 @@
 const path = require('path');
 const { resolveConfig, getTargetsForPlatform } = require('./configResolver');
 
+// node gives us 'win32' even on 64bit windows, kinda confusing
 const PLATFORM_MAP = {
     'win32': 'win',
     'linux': 'linux',
@@ -34,7 +35,8 @@ async function build(targetArg, archArg, configPath) {
     for (const t of targets) {
         for (const arch of t.arch) {
             console.log(`\nBuilding target: ${t.target} (${arch})`);
-            console.log('='.repeat(40));
+            // just a simple separator line
+            console.log('-'.repeat(40));
 
             try {
                 const targetModule = require(`./targets/${t.target}.js`);

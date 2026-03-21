@@ -7,7 +7,9 @@ function validateDependencies() {
         console.log('  makensis found');
         return true;
     } catch {
-        console.error('  makensis not found. Install from: https://nsis.sourceforge.io');
+        // makensis is needed to build windows installers
+        console.error('  makensis not found!');
+        console.error('  Install it from: https://nsis.sourceforge.io/Download');
         return false;
     }
 }

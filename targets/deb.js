@@ -7,7 +7,9 @@ function validateDependencies() {
         console.log('  dpkg-deb found');
         return true;
     } catch {
-        console.error('  dpkg-deb not found. Install with: sudo apt install dpkg');
+        console.error('  dpkg-deb not found!');
+        // this should be available by default on most debian/ubuntu systems
+        console.error('  Try: sudo apt-get install dpkg');
         return false;
     }
 }

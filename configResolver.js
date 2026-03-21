@@ -21,6 +21,7 @@ function getTargetsForPlatform(config, platform) {
     const builderConfig = config.cli.builder;
     const platformConfig = builderConfig[platform];
 
+    // TODO: maybe add a fallback to 'all' platforms later?
     if (!platformConfig) {
         throw new Error(`No builder config found for platform: ${platform}`);
     }

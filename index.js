@@ -7,6 +7,7 @@ const args = process.argv.slice(2);
 
 let target = null;
 let arch = null;
+// default config path, can be overridden with --config flag
 let configPath = 'neutralino.config.json';
 
 for (let i = 0; i < args.length; i++) {
